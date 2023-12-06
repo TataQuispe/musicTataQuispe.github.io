@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>MMusic</title>
+  <link rel="icon" href="letra-m.png">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS v5.2.1 -->
+  <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tienda.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+     <style>
+        
+        footer{
+            background-color: black;
+            color:white;
+            height: auto;
+            text-align: center;
+            padding: 1em;
+        }
+        .redes{
+            width: 2em;
+            height: 2em;
+       }
+    </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color:black;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" style="color:white;">Milo's Music</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(69, 65, 65);">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="rank.html" style="color:white;" >Latin Music Ranking</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:white;">
+                  Music
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="buy.html" style="color:black">New Music</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="log.html" style="color:black;">Log in</a></li>
+                  <li><a class="dropdown-item" href="sig.html" style="color:black;">Sign in</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true" href="tienda.html" style="color: white;">Merch</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit" style="background-color: green; color: aliceblue;">Search</button>
+            </form>
+          </div>
+        </div>
+        <div>
+           <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+        </div>
+      </nav> 
+  </header>
+
+
+
+  <main >
+    <div class="container">
+      <div class="row">
+          <div id="contenedor-productos" class="col-md-6">
+          </div>
+      </div>
+  </div>
+  </main>
+<div class="modal-contenedor">
+  <div class="modal-carrito">
+      <h3>Carrito</h3>
+      <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+      <div id="carrito-contenedor">
+      </div>
+      <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
+      <button id="vaciar-carrito" class="boton-agregar" style="background-color: royalblue;">Vaciar carrito</button>
+      <button id="compra" class="btn-dark" data-bs-toggle="modal" data-bs-target="#compra1">Efectuar la compra.</button>
+  </div>
+</div>
+<div class="modal fade" id="compra1" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Datos de pago</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input class="form-control form-control-lg" type="text" placeholder="Ingrese su correo electronico." aria-label=".form-control-lg example" required> <br>
+        <input class="form-control" type="text" placeholder="Ingrese su numero de Tarjeta" aria-label="default input example"> <br>
+        <input class="form-control form-control-sm" type="password" placeholder="Introduzca su codigo de control." aria-label=".form-control-sm example" maxlength="3"> <br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#compraexitosa" style="background-color: green; color: aliceblue;">Continuar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+ </div>
+<div class="modal fade" id="compraexitosa" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Gracias por su compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Su compra fue efectuada. <br>Recibira un correo electronico con la confirmacion y los detalles de su pedido.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: green; color: aliceblue;">Cerrar</button>
+      </div>
+    </div>
+  </div>
+ </div>  
+<script defer src="stock.js"></script>
+<script defer src="modal.js"></script>
+<script defer src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+
+
+
+
+  <footer>
+    🎵🌟 Síguenos y mantente al tanto de las últimas noticias. Descubre artistas
+      emergentes y sumérgete en un mundo de contenido exclusivo. 
+      No puedes perderte nuestro reproductor, que garantiza la mejor calidad de audio
+      y te presenta las mejores novedades!🎶🎉 <br>
+      <a href="https://www.facebook.com/Billboard" target="_blank"><img src="Face.png" class="redes"></a>
+      <a href="https://www.instagram.com/billboard/" target="_blank"><img src="insta.png" class="redes"></a>
+      <a href="https://twitter.com/billboard" target="_blank"><img src="twi.png" class="redes"></a>
+   </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
